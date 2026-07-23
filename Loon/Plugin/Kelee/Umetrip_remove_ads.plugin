@@ -1,0 +1,20 @@
+#!name=航旅纵横去广告
+#!desc=过滤航旅纵横广告
+#App链接=https://apps.apple.com/app/id480161784
+#!author=佚名[https://github.com/wot1026/rules/blob/X/Loon/Readme.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.4.0(962)
+#!homepage=https://github.com/wot1026/rules/raw/X/Loon/Plugin/Kelee/Umetrip_remove_ads.plugin
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Umetrip.png
+#!date=2026-06-01 17:11:35
+
+[Rule]
+URL-REGEX, "^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native", REJECT
+
+[Script]
+http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path=https://github.com/wot1026/rules/raw/X/Loon/Plugin/Kelee/Script/Umetrip_remove_ads.js, tag=移除首页广告
+
+[MitM]
+hostname=114.115.217.129, home.umetrip.com

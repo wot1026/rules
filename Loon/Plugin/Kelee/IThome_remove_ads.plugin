@@ -1,0 +1,24 @@
+#!name=IT之家去广告
+#!desc=过滤IT之家信息流广告和文末广告，自定义移除置顶和轮播图，自定义移除项需在插件配置。
+#App链接=https://apps.apple.com/app/id570610859
+#!author=可莉🅥[https://github.com/wot1026/rules/blob/X/Loon/Readme.md]
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.4.0(962)
+#!homepage=https://github.com/wot1026/rules/raw/X/Loon/Plugin/Kelee/IThome_remove_ads.plugin
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
+#!date=2026-06-01 17:11:35
+
+[Argument]
+removePinnedArticles = switch, false, true, tag=移除置顶文章, desc=启用后将移除置顶文章
+removeAllBanners = switch, false, true, tag=移除全部横幅, desc=启用后将移除全部横幅
+
+[Rewrite]
+^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ reject
+
+[Script]
+http-response ^https:\/\/napi\.ithome\.com\/api\/(news\/indexv2\/iphone\/\d+|topmenu\/getfeeds\?) script-path=https://github.com/wot1026/rules/raw/X/Loon/Plugin/Kelee/Script/IThome_remove_ads.js, requires-body=true, tag=IT之家去广告, argument=[{removeAllBanners},{removePinnedArticles}]
+
+[MitM]
+hostname=napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com
