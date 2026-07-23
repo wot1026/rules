@@ -1,5 +1,7 @@
-DOMAIN-SUFFIX,trafficmanager.net
-DOMAIN-SUFFIX,vscode-sync.trafficmanager.net
-DOMAIN-SUFFIX,vscode-unpkg.net
+# 规则名称: VSCode
+# 规则统计: 3
 
-# Name:VSCode
+domain_suffix_set:
+  - trafficmanager.net
+  - vscode-sync.trafficmanager.net
+  - vscode-unpkg.net

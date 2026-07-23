@@ -1,10 +1,9 @@
-DOMAIN,cdn.usefathom.com
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
-# AUTHOR: blackmatrix7
-# DOMAIN-SUFFIX: 2
-# DOMAIN: 1
-# NAME: Claude
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# TOTAL: 3
-# UPDATED: 2025-06-06 09:20:01
+# 规则名称: Claude
+# 规则统计: 3
+
+domain_set:
+  - cdn.usefathom.com
+
+domain_suffix_set:
+  - anthropic.com
+  - claude.ai
