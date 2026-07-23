@@ -119,6 +119,21 @@ def parse_file(lines):
 
         parts = line.split(",", 1)
         if len(parts) != 2:
+            # [修复] 没有逗号不代表这行格式有问题——ruleset.skk.moe 等来源的
+            # domainset 文件本身就是"纯域名"格式，一行一个域名，没有 TYPE, 前缀
+            # （例如 "+.ads.example.com" 或 "example.com"）。原逻辑遇到这种行
+            # 直接 continue 跳过，导致这类源文件里 116000+ 条规则里只有极少数
+            # 恰好带逗号的行被保留，绝大部分被静默丢弃（已用 ruleset.skk.moe
+            # 的 reject.conf 实测确认：产出从应有的 10万+ 条锐减到几百条）。
+            # "+." 前缀是 Clash/Surge 生态里 domainset 的通配后缀写法，等价于
+            # DOMAIN-SUFFIX；不带前缀的裸域名等价于精确匹配的 DOMAIN。
+            bare = line.strip()
+            if bare.startswith("+."):
+                domain_suffix_set_line = bare[2:]
+                if domain_suffix_set_line:
+                    buckets["domain_suffix_set"].append(domain_suffix_set_line)
+            elif bare and not bare.startswith(("//",)):
+                buckets["domain_set"].append(bare)
             continue
 
         rule_type = parts[0].strip()
