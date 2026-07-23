@@ -301,7 +301,6 @@ jobs:
             [smzdm_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/smzdm_remove_ads.lpx"
             [RedPaper_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx"
             [Weixin_Official_Accounts_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/Weixin_Official_Accounts_remove_ads.lpx"
-            [QQMusic_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/QQMusic_remove_ads.lpx"
             [Daily_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/Daily_remove_ads.lpx"
             [IThome_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/IThome_remove_ads.lpx"
             [BaiduSearchWebpage_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/BaiduSearchWebpage_remove_ads.lpx"
@@ -413,7 +412,6 @@ jobs:
             [UnionPay_remove_ads_with_ssl_unpinning]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/UnionPay_remove_ads_with_ssl_unpinning.lpx"
             [DouBan_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/DouBan_remove_ads.lpx"
             [BaiduMap_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/BaiduMap_remove_ads.lpx"
-            [FC_Box_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/FC_Box_remove_ads.lpx"
             [ZhiLianZhaoPin_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/ZhiLianZhaoPin_remove_ads.lpx"
             [LoonGallery]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/LoonGallery.lpx"
             [Sub-Store]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/Sub-Store.lpx"
@@ -441,7 +439,6 @@ jobs:
             [WPS_checkin]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/WPS_checkin.lpx"
             [FollowRSS_checkin]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/FollowRSS_checkin.lpx"
             [KebidaDushu_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/KebidaDushu_remove_ads.lpx"
-            [XunLei_remove_ads]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx"
 
         )
         
