@@ -1,5 +1,5 @@
 # 规则名称: Ads_SukkaW
-# 规则统计: 355
+# 规则统计: 370
 
 no_resolve: true
 
@@ -313,6 +313,23 @@ domain_keyword_set:
   - utiq.
   - wxsnsdy
   - zymerget
+
+domain_wildcard_set:
+  - '*-pcdn-*.biliapi.net'
+  - '*.ad.*.prod.hosts.ooklaserver.net'
+  - '*.tracking.*.miui.com'
+  - ads-*.tiktok.com
+  - ads-*.xhscdn.com
+  - adv0*.msa.cdn.mediaset.net
+  - analytics-*.aasaam.com
+  - beacons*.gvt?.com
+  - f-log*.grammarly.io
+  - info.*.aleragroup.com
+  - log*-normal-*.tiktokv.com
+  - mon-*.byteoversea.com
+  - pixel*.adswizz.com
+  - tracking.*.miui.com
+  - v*.thenewstack.io
 
 ip_cidr_set:
   - 101.124.19.122/32
