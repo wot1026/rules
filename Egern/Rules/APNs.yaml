@@ -4,10 +4,10 @@
 no_resolve: true
 
 domain_set:
-  - identity.apple.com //APNs 证书请求门户
+  - identity.apple.com
 
 domain_suffix_set:
-  - push.apple.com //推送通知
+  - push.apple.com
 
 ip_cidr_set:
   - 17.188.128.0/18
