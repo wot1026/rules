@@ -36,6 +36,7 @@ TYPE_MAP = {
     "DOMAIN": "domain_set",
     "DOMAIN-SUFFIX": "domain_suffix_set",
     "DOMAIN-KEYWORD": "domain_keyword_set",
+    "DOMAIN-WILDCARD": "domain_wildcard_set",  # 官方文档确认支持: https://egernapp.com/docs/configuration/rules
     "IP-CIDR": "ip_cidr_set",
     "IP-CIDR6": "ip_cidr6_set",
     "IP-ASN": "asn_set",
@@ -46,15 +47,16 @@ TYPE_MAP = {
 
 # Egern YAML 里各分类的输出顺序（未出现的分类会被跳过）
 KEY_ORDER = [
-    "domain_set", "domain_suffix_set", "domain_keyword_set",
+    "domain_set", "domain_suffix_set", "domain_keyword_set", "domain_wildcard_set",
     "ip_cidr_set", "ip_cidr6_set", "asn_set", "url_regex_set",
     "geoip_set", "user_agent_set",
 ]
 
 # 这几种类型的值在 YAML 里如果本身含有可能引发解析歧义的字符(比如 URL-REGEX
-# 常见的正则元字符)，用单引号包一层更安全；沿用原脚本"给URL-REGEX加引号"的诉求，
-# 顺带也覆盖 USER-AGENT 里常见的 * 通配符（YAML 里裸 * 是别名语法，必须加引号）
-NEEDS_QUOTE_TYPES = {"URL-REGEX", "USER-AGENT"}
+# 常见的正则元字符、DOMAIN-WILDCARD/USER-AGENT 常见的 * 通配符)，用单引号包一层更
+# 安全；沿用原脚本"给URL-REGEX加引号"的诉求，顺带覆盖裸 * 开头会被 YAML 解析器
+# 误判为别名语法的情况
+NEEDS_QUOTE_TYPES = {"URL-REGEX", "USER-AGENT", "DOMAIN-WILDCARD"}
 
 
 def needs_quote(value: str) -> bool:
@@ -77,10 +79,14 @@ def parse_file(lines):
     解析原始 TYPE,VALUE 格式的行，返回:
       buckets: {分类key: [值, ...]}
       has_no_resolve: 是否任意一条 IP-CIDR/IP-CIDR6/IP-ASN 行带 no-resolve 标记
+      skipped: {未识别的 rule_type: 出现次数}，用于提示哪些字段被静默丢弃
+        （例如 Egern 本身不支持进程名规则时的 PROCESS-NAME，或者未来上游新增、
+        脚本尚未跟进映射的类型）
     跳过空行和注释行(# 开头)。
     """
     buckets = {key: [] for key in TYPE_MAP.values()}
     has_no_resolve = False
+    skipped = {}
 
     for raw_line in lines:
         line = raw_line.strip()
@@ -95,6 +101,7 @@ def parse_file(lines):
         rest = parts[1].strip()
 
         if rule_type not in TYPE_MAP:
+            skipped[rule_type] = skipped.get(rule_type, 0) + 1
             continue
 
         # 判断这一行是否带 no-resolve 后缀（只对 IP 类规则有意义）
@@ -113,7 +120,7 @@ def parse_file(lines):
 
         buckets[TYPE_MAP[rule_type]].append(value)
 
-    return buckets, has_no_resolve
+    return buckets, has_no_resolve, skipped
 
 
 def build_yaml(buckets: dict, has_no_resolve: bool, ruleset_name: str) -> str:
@@ -140,11 +147,11 @@ def build_yaml(buckets: dict, has_no_resolve: bool, ruleset_name: str) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-def convert_one(path: str):
+def convert_one(path: str) -> dict:
     with open(path, "r", encoding="utf-8", errors="replace") as f:
         lines = f.readlines()
 
-    buckets, has_no_resolve = parse_file(lines)
+    buckets, has_no_resolve, skipped = parse_file(lines)
     ruleset_name = os.path.basename(path)[: -len(".yaml")] if path.endswith(".yaml") else os.path.basename(path)
 
     yaml_content = build_yaml(buckets, has_no_resolve, ruleset_name)
@@ -154,6 +161,8 @@ def convert_one(path: str):
 
     total = sum(len(v) for v in buckets.values())
     print(f"✅ {ruleset_name}: 共 {total} 条规则" + ("（含 no_resolve: true）" if has_no_resolve else ""))
+
+    return skipped
 
 
 def main():
@@ -168,8 +177,18 @@ def main():
         print(f"⚠️ {target_dir} 目录下没有找到任何 .yaml 文件")
         return
 
+    # 汇总所有文件里被跳过（TYPE_MAP 未覆盖）的规则类型及出现次数，
+    # 转换结束后统一提示，避免上游新增字段类型时被无声丢弃却无人发现
+    total_skipped = {}
     for path in yaml_files:
-        convert_one(path)
+        skipped = convert_one(path)
+        for rule_type, count in skipped.items():
+            total_skipped[rule_type] = total_skipped.get(rule_type, 0) + count
+
+    if total_skipped:
+        print("\n⚠️ 以下规则类型不在 TYPE_MAP 中，已被跳过（可能是 Egern 不支持的类型，也可能是遗漏的映射，请人工核实）：")
+        for rule_type, count in sorted(total_skipped.items(), key=lambda x: -x[1]):
+            print(f"   {rule_type}: {count} 条")
 
 
 if __name__ == "__main__":
