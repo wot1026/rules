@@ -445,20 +445,22 @@ jobs:
 
         )
         
-        # 下载插件并在文件中添加原链接
-        # --connect-timeout 10: 连接阶段最多等10秒(DNS+TCP+TLS握手)
-        # --max-time 20: 整个请求(含数据传输)最多等20秒，超时自动放弃，避免单个源卡死拖垮全部174个插件
-        # 加 || echo 让失败的请求不会中断整个循环，只记录哪个插件下载失败
+        # 下载插件：改用 curl_cffi + safari15_5 TLS指纹伪装（沿用 sync_loon_unified.py 里
+        # 已验证对 kelee.one / git.repcz.link 这类反爬防护有效的下载方式，比裸curl更不容易
+        # 被限流/拒绝服务，这也是之前卡死的根本原因之一）。
+        # 同时加了超时(15秒/个)和8路并发，把原本174次串行裸curl的耗时大幅压缩，
+        # 单个插件失败只跳过记录，不影响其余插件继续下载。
+
+        # 装 curl_cffi
+        pip install curl_cffi --break-system-packages -q
+
+        # 把 bash 关联数组导出成 "插件名\tURL" 格式的临时文件，供 Python 脚本读取
+        > /tmp/plugin_list.tsv
         for plugin_name in "${!plugins[@]}"; do
-            url="${plugins[$plugin_name]}"
-            curl -A "Surge iOS/3367" -L --connect-timeout 10 --max-time 20 \
-                 -o "rules-repo/Loon/Plugin/Kelee/${plugin_name}.plugin" "$url" \
-                 || echo "⚠️ 下载失败或超时，已跳过: $plugin_name ($url)"
-            
-            # 将原链接添加到文件开头
-           # echo "# 原链接 : $url" | cat - "rules-repo/Loon/Plugin/Kelee/$plugin_name.plugin" > temp && mv temp "rules-repo/Loon/Plugin/Kelee/$plugin_name.plugin"
-            # sed -i "1s|^|# 原链接 : $url\n|" "rules-repo/Loon/Plugin/Kelee/$plugin_name.plugin"  # 在文件开头添加原链接
+            printf "%s\t%s\n" "$plugin_name" "${plugins[$plugin_name]}" >> /tmp/plugin_list.tsv
         done
+
+        python3 rules-repo/scripts/download_plugins.py < /tmp/plugin_list.tsv
 
         # 删除 error.log 文件
         # rm -f rules-repo/Loon/Plugin/Kelee/error.log || echo "No error log to delete"
