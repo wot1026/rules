@@ -1,5 +1,5 @@
 # 规则名称: Anti-Ad
-# 规则统计: 100735
+# 规则统计: 100731
 
 HOST-SUFFIX,0.myikas.com,Anti-Ad
 HOST-SUFFIX,0.net.easyjet.com,Anti-Ad
@@ -100732,7 +100732,3 @@ HOST-SUFFIX,zzyanhushi.com,Anti-Ad
 HOST-SUFFIX,zzyqkeniw.com,Anti-Ad
 HOST-SUFFIX,zzyxhvqjjtgxj.online,Anti-Ad
 HOST-SUFFIX,zzzmjfixezere.site,Anti-Ad
-#TITLE=anti-AD
-#TOTAL_LINES=100731
-#URL=https://github.com/privacy-protection-tools/anti-AD
-#VER=20260723035043

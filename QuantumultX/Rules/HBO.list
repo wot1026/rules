@@ -1,5 +1,5 @@
 # 规则名称: HBO
-# 规则统计: 54
+# 规则统计: 47
 
 HOST-SUFFIX,bcbolthboa-a.akamaihd.net,HBO
 HOST-SUFFIX,cf-images.ap-southeast-1.prod.boltdns.net,HBO
@@ -48,10 +48,3 @@ HOST-SUFFIX,nowe.hk,HBO
 HOST-SUFFIX,players.brightcove.net,HBO
 HOST-SUFFIX,warnermediacdn.com,HBO
 HOST-SUFFIX,youboranqs01.com,HBO
-# AUTHOR: blackmatrix7
-# DOMAIN-SUFFIX: 47
-# NAME: HBO
-# PROCESS-NAME: 1
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# TOTAL: 48
-# UPDATED: 2025-06-06 09:16:58

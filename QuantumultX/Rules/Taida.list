@@ -1,7 +1,7 @@
 # 规则名称: Taida
-# 规则统计: 59
+# 规则统计: 51
 
-HOST, login.windows.net,Taida
+HOST,login.windows.net,Taida
 HOST,apac.ng.msg.teams.microsoft.com,Taida
 HOST,api-apac.flightproxy.teams.microsoft.com,Taida
 HOST,api.userstore.skype.com,Taida
@@ -36,27 +36,19 @@ HOST-SUFFIX,s-ring.msedge.net,Taida
 HOST-SUFFIX,scapi.vmware.com,Taida
 HOST-SUFFIX,skype.com,Taida
 HOST-SUFFIX,substrate.office.com,Taida
-HOST-KEYWORD,academy  ,Taida
-HOST-KEYWORD,awmdm  ,Taida
-HOST-KEYWORD,delta  ,Taida
-HOST-KEYWORD,deltaww  ,Taida
-HOST-KEYWORD,dms  ,Taida
-HOST-KEYWORD,getboxer  ,Taida
-HOST-KEYWORD,gravatar  ,Taida
-HOST-KEYWORD,microsoft  ,Taida
-HOST-KEYWORD,mydelta  ,Taida
-HOST-KEYWORD,mydeltaww  ,Taida
-HOST-KEYWORD,office  ,Taida
-HOST-KEYWORD,skype  ,Taida
-HOST-KEYWORD,teams  ,Taida
-HOST-KEYWORD,vmware  ,Taida
-HOST-KEYWORD,vmwservices  ,Taida
+HOST-KEYWORD,academy,Taida
+HOST-KEYWORD,awmdm,Taida
+HOST-KEYWORD,delta,Taida
+HOST-KEYWORD,deltaww,Taida
+HOST-KEYWORD,dms,Taida
+HOST-KEYWORD,getboxer,Taida
+HOST-KEYWORD,gravatar,Taida
+HOST-KEYWORD,microsoft,Taida
+HOST-KEYWORD,mydelta,Taida
+HOST-KEYWORD,mydeltaww,Taida
+HOST-KEYWORD,office,Taida
+HOST-KEYWORD,skype,Taida
+HOST-KEYWORD,teams,Taida
+HOST-KEYWORD,vmware,Taida
+HOST-KEYWORD,vmwservices,Taida
 IP-CIDR,10.146.136.147/32,Taida
-
-# Boxer 相关服务
-# Delta 相关服务
-# LOG
-# Microsoft 相关服务
-# NAME: Delta
-# VMware 相关服务
-# 关键字匹配

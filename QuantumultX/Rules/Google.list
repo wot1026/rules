@@ -1,5 +1,5 @@
 # 规则名称: Google
-# 规则统计: 27
+# 规则统计: 25
 
 HOST-SUFFIX,1e100.net,Google
 HOST-SUFFIX,2mdn.net,Google
@@ -24,7 +24,5 @@ HOST-SUFFIX,yt.be,Google
 HOST-SUFFIX,ytimg.com,Google
 HOST-KEYWORD,gmail,Google
 HOST-KEYWORD,google,Google
-IP-CIDR,173.194.0.0/16,Google
-IP-CIDR,74.125.0.0/16,Google
-# 内容：Google
-# 数量：25条
+IP-CIDR,173.194.0.0/16,no-resolve,Google
+IP-CIDR,74.125.0.0/16,no-resolve,Google

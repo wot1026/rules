@@ -1,5 +1,5 @@
 # 规则名称: Netflix
-# 规则统计: 42
+# 规则统计: 40
 
 HOST,netflix.com.edgesuite.net,Netflix
 HOST-SUFFIX,fast.com,Netflix
@@ -23,23 +23,21 @@ HOST-SUFFIX,nflxvideo.net,Netflix
 HOST-KEYWORD,apiproxy-device-prod-nlb-,Netflix
 HOST-KEYWORD,dualstack.apiproxy-,Netflix
 HOST-KEYWORD,netflixdnstest,Netflix
-IP-CIDR,103.87.204.0/22,Netflix
-IP-CIDR,108.175.32.0/20,Netflix
-IP-CIDR,185.2.220.0/22,Netflix
-IP-CIDR,185.9.188.0/22,Netflix
-IP-CIDR,192.173.64.0/18,Netflix
-IP-CIDR,198.38.96.0/19,Netflix
-IP-CIDR,198.45.48.0/20,Netflix
-IP-CIDR,203.75.84.0/24,Netflix
-IP-CIDR,207.45.72.0/22,Netflix
-IP-CIDR,208.75.76.0/22,Netflix
-IP-CIDR,23.246.0.0/18,Netflix
-IP-CIDR,37.77.184.0/21,Netflix
-IP-CIDR,38.72.126.0/24,Netflix
-IP-CIDR,45.57.0.0/17,Netflix
-IP-CIDR,64.120.128.0/17,Netflix
-IP-CIDR,66.197.128.0/17,Netflix
-IP-CIDR,69.53.224.0/19,Netflix
-IP-CIDR,8.41.4.0/24,Netflix
-# 内容：Netflix
-# 数量：41条
+IP-CIDR,103.87.204.0/22,no-resolve,Netflix
+IP-CIDR,108.175.32.0/20,no-resolve,Netflix
+IP-CIDR,185.2.220.0/22,no-resolve,Netflix
+IP-CIDR,185.9.188.0/22,no-resolve,Netflix
+IP-CIDR,192.173.64.0/18,no-resolve,Netflix
+IP-CIDR,198.38.96.0/19,no-resolve,Netflix
+IP-CIDR,198.45.48.0/20,no-resolve,Netflix
+IP-CIDR,203.75.84.0/24,no-resolve,Netflix
+IP-CIDR,207.45.72.0/22,no-resolve,Netflix
+IP-CIDR,208.75.76.0/22,no-resolve,Netflix
+IP-CIDR,23.246.0.0/18,no-resolve,Netflix
+IP-CIDR,37.77.184.0/21,no-resolve,Netflix
+IP-CIDR,38.72.126.0/24,no-resolve,Netflix
+IP-CIDR,45.57.0.0/17,no-resolve,Netflix
+IP-CIDR,64.120.128.0/17,no-resolve,Netflix
+IP-CIDR,66.197.128.0/17,no-resolve,Netflix
+IP-CIDR,69.53.224.0/19,no-resolve,Netflix
+IP-CIDR,8.41.4.0/24,no-resolve,Netflix

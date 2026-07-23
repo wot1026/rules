@@ -1,5 +1,5 @@
 # 规则名称: Ads_EasyListChina
-# 规则统计: 6164
+# 规则统计: 6152
 
 HOST-SUFFIX,003store.com,Ads_EasyListChina
 HOST-SUFFIX,00k456wyh.com,Ads_EasyListChina
@@ -6153,15 +6153,3 @@ HOST-SUFFIX,zyek35wsn.com,Ads_EasyListChina
 HOST-SUFFIX,zyifk.cn,Ads_EasyListChina
 HOST-SUFFIX,zzfxfz.com,Ads_EasyListChina
 HOST-SUFFIX,zzuccikqt.com,Ads_EasyListChina
-
-## !
-## ! Chinese supplement for the EasyList filters
-## ! Expires: 4 days (update frequency)
-## ! Homepage: https://github.com/easylist/easylistchina/
-## ! Last modified: %timestamp%
-## ! License: https://easylist.to/pages/licence.html
-## ! Please report any unblocked adverts or problems
-## ! Title: EasyList China
-## ! on GitHub (https://github.com/easylist/easylistchina/issues)
-## ! or via e-mail (easylist.china@gmail.com).
-## [Adblock Plus 2.0]
