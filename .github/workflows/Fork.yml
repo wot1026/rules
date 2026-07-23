@@ -33,7 +33,7 @@ jobs:
 
     - name: 复刻原始文件
       run: |
-        mkdir -p Tool/.github/Record
+        mkdir -p rules-repo/.github/Record
         curl -L -o rules-repo/.github/Record/Build.yml "https://github.com/Repcz/Tool/raw/X/.github/workflows/Build.yml"
         curl -L -o rules-repo/.github/Record/ClearCommits.yml "https://github.com/Repcz/Tool/raw/X/.github/workflows/ClearCommits.yml"
 
@@ -517,7 +517,7 @@ jobs:
 
     - name: 单独复刻loon配置
       run: |
-        mkdir -p Tool/Loon
+        mkdir -p rules-repo/Loon
         curl -L -o rules-repo/Loon/Loon.conf "https://github.com/Moli-X/Resources/raw/main/Loon/Loon.conf"
 
 
@@ -586,7 +586,7 @@ jobs:
 
     - name: 单独复刻QX配置
       run: |
-        mkdir -p Tool/QuantumultX
+        mkdir -p rules-repo/QuantumultX
         curl -L -o rules-repo/QuantumultX/QuantumultX.conf "https://github.com/GodMoli/QuanX/raw/main/File/Auto.conf"
 
 ###### Surge
@@ -607,7 +607,7 @@ jobs:
 
     - name: 单独复刻Surge配置
       run: |
-        mkdir -p Tool/Surge
+        mkdir -p rules-repo/Surge
         curl -L -o rules-repo/Surge/SurgePRO.conf "https://github.com/Moli-X/Resources/raw/main/Surge/SurgePRO.conf"
 
 ###### Shadowrocket
@@ -629,7 +629,7 @@ jobs:
 
     - name: 单独复刻Shadowrocket配置
       run: |
-        mkdir -p Tool/Shadowrocket
+        mkdir -p rules-repo/Shadowrocket
         curl -L -o rules-repo/Shadowrocket/Shadowrocket.conf "https://raw.githubusercontent.com/Moli-X/Shadowrocket/Master/Rewite/Shadowrocket.conf"
 
 
@@ -721,7 +721,7 @@ jobs:
 
     - name: 复刻GeoIP规则
       run: |
-        mkdir -p Tool/GeoIP
+        mkdir -p rules-repo/GeoIP
         curl -L -o rules-repo/GeoIP/CN_Country.mmdb "https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb"
         curl -L -o rules-repo/GeoIP/Global_Country.mmdb "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
         curl -L -o rules-repo/GeoIP/geoip-lite.dat "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
