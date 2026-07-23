@@ -434,7 +434,7 @@ jobs:
             [Weixin_external_links_unlock]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx"
             [TikTok_redirectn]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/TikTok_redirect.lpx"
             [Spotify_lyrics_translation]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/Spotify_lyrics_translation.lpx"
-            [NodeLinkCheck]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/NodeLinkCheck.Lpx"
+            [NodeLinkCheck]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/NodeLinkCheck.lpx"
             [QuickSearchn]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/QuickSearch.lpx"
             [UnnooQuan_remove_watermark]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/UnnooQuan_remove_watermark.lpx"
             [AppleWeatherEnhancer]="https://git.repcz.link/kelee.one/Tool/Loon/Lpx/AppleWeatherEnhancer.lpx"
@@ -559,36 +559,13 @@ jobs:
 
     - name: QuantumultX规则
       run: |
-        for file in rules-repo/QuantumultX/Rules/*.list; do
-          if [ -f "$file" ]; then
-            sed -i -e '/^PROCESS-NAME/d' "$file"
-            sed -i -e '/^AND/d' "$file"
-            sed -i -e '/^OR/d' "$file"
-            sed -i -e '/^NOT/d' "$file"
-            sed -i -e '/^DEST-PORT/d' "$file"
-            sed -i -e 's/^DOMAIN,/HOST,/g' "$file"
-            sed -i -e 's/^DOMAIN-SUFFIX,/HOST-SUFFIX,/g' "$file"
-            sed -i -e 's/^DOMAIN-KEYWORD,/HOST-KEYWORD,/g' "$file"
-            sed -i -e 's/^DOMAIN-WILDCARD,/HOST-WILDCARD,/g' "$file"
-            sed -i -e 's/^IP-CIDR6,/IP6-CIDR,/g' "$file"
-            sed -i 's/,no-resolve//g' "$file"
-          else
-            echo "$file not found."
-          fi
-        done
-
-        for file in rules-repo/QuantumultX/Rules/*.list; do
-          if [ -f "$file" ]; then
-            file_names=$(basename "$file" .list)
-            line_count=$(wc -l < "$file")
-            awk -v policy="$file_names" '!/^#|^ *$/ {print $0","policy; next} {print}' "$file" > tmpfile && mv tmpfile "$file"
-            awk -v fname="$file_names" 'NR==1 {print "# 规则名称: " fname} {print}' "$file" > tmpfile && mv tmpfile "$file"
-            awk -v count="$line_count" 'NR==2 {print "# 规则统计: " count} {print}' "$file" > tmpfile && mv tmpfile "$file"
-            sed -i '2a\\' "$file"
-          else
-            echo "$file not found."
-          fi
-        done
+        # 转换逻辑改为调用 scripts/convert_quantumultx.py（原本这里是一堆 sed/awk 叠加实现，
+        # 有三个问题：1) ", no-resolve"（逗号后带空格）清不掉，导致后续 awk 追加 policy 时
+        # no-resolve 和 policy 位置错位；2) 完全没有处理行内 // 注释，注释文字会混入字段，
+        # 导致规则解析错位甚至失效（已在 Reject.list / ChinaASN.list 等生产文件里实测复现）；
+        # 3) 多个独立 sed/awk 顺序执行，互不感知，纯文本层面拼接。
+        # 新脚本一次性正确处理这三点，见 scripts/convert_quantumultx.py 顶部说明。
+        python3 rules-repo/scripts/convert_quantumultx.py rules-repo/QuantumultX/Rules
 
 
     - name: 单独复刻QX配置
