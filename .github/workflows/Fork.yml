@@ -34,8 +34,12 @@ jobs:
     - name: 复刻原始文件
       run: |
         mkdir -p rules-repo/.github/Record
-        curl --connect-timeout 10 --max-time 30 -L -o rules-repo/.github/Record/Build.yml "https://github.com/Repcz/Tool/raw/X/.github/workflows/Build.yml"
-        curl --connect-timeout 10 --max-time 30 -L -o rules-repo/.github/Record/ClearCommits.yml "https://github.com/Repcz/Tool/raw/X/.github/workflows/ClearCommits.yml"
+        # 加 -f：上游 Repcz/Tool 的 X 分支目前这两个文件已 404，不加 -f 时 curl 会把
+        # GitHub 返回的 404 错误页面原样写入下面这两个 .yml 文件，产物是脏的但流程不会报错。
+        # 加 -f 后请求失败时 curl 直接非0退出，不写入文件；用 || echo 兜底，只是提示跳过，
+        # 不影响后面其余 step（这两个文件只是留档记录，未被规则处理逻辑引用）。
+        curl --connect-timeout 10 --max-time 30 -f -L -o rules-repo/.github/Record/Build.yml "https://github.com/Repcz/Tool/raw/X/.github/workflows/Build.yml" || echo "⚠️ Build.yml 源已不可用，跳过（保留旧版本，如有）"
+        curl --connect-timeout 10 --max-time 30 -f -L -o rules-repo/.github/Record/ClearCommits.yml "https://github.com/Repcz/Tool/raw/X/.github/workflows/ClearCommits.yml" || echo "⚠️ ClearCommits.yml 源已不可用，跳过（保留旧版本，如有）"
 
     - name: 规则下载
       run: |
