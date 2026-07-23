@@ -74,6 +74,24 @@ def quote_value(value: str) -> str:
     return value
 
 
+def strip_inline_comment(line: str) -> str:
+    """
+    剥离 Surge 源文件里常见的行内注释，如：
+      DOMAIN, identity.apple.com //APNs 证书请求门户
+    转换成:
+      DOMAIN, identity.apple.com
+    只处理 " //" (前面带空白) 或行首的 "//"，避免误伤值本身含 "//" 的情况
+    (例如 URL-REGEX 规则里可能出现 "https://" 这种合法的双斜杠)。
+    """
+    idx = line.find("//")
+    while idx != -1:
+        # 前面是行首，或前一个字符是空白，才认为是注释起点
+        if idx == 0 or line[idx - 1].isspace():
+            return line[:idx].rstrip()
+        idx = line.find("//", idx + 1)
+    return line
+
+
 def parse_file(lines):
     """
     解析原始 TYPE,VALUE 格式的行，返回:
@@ -82,7 +100,9 @@ def parse_file(lines):
       skipped: {未识别的 rule_type: 出现次数}，用于提示哪些字段被静默丢弃
         （例如 Egern 本身不支持进程名规则时的 PROCESS-NAME，或者未来上游新增、
         脚本尚未跟进映射的类型）
-    跳过空行和注释行(# 开头)。
+    跳过空行和注释行(# 开头)。行内 // 注释会先被剥离，避免混入 domain_set 等
+    字段值（例如 "DOMAIN, identity.apple.com //APNs 证书请求门户" 之前会把
+    "//APNs 证书请求门户" 也当成域名的一部分写进 YAML，导致该条规则永久不匹配）。
     """
     buckets = {key: [] for key in TYPE_MAP.values()}
     has_no_resolve = False
@@ -91,6 +111,10 @@ def parse_file(lines):
     for raw_line in lines:
         line = raw_line.strip()
         if not line or line.startswith("#"):
+            continue
+
+        line = strip_inline_comment(line)
+        if not line:
             continue
 
         parts = line.split(",", 1)
@@ -104,7 +128,9 @@ def parse_file(lines):
             skipped[rule_type] = skipped.get(rule_type, 0) + 1
             continue
 
-        # 判断这一行是否带 no-resolve 后缀（只对 IP 类规则有意义）
+        # 判断这一行是否带 no-resolve 后缀（只对 IP 类规则有意义）。
+        # 注释已在上面剥离，这里统一按逗号分隔处理，无需再单独兼容
+        # "注释导致 no-resolve 后面还有内容" 的情况。
         if rule_type in ("IP-CIDR", "IP-CIDR6", "IP-ASN") and rest.endswith(",no-resolve"):
             has_no_resolve = True
             value = rest[: -len(",no-resolve")].strip()
