@@ -1,8 +1,15 @@
 # 规则名称: Update
-# 规则统计: 4
+# 规则统计: 9
+
+domain_set:
+  - appldnld.apple.com
+  - gdmf.apple.com
+  - mesu.apple.com
+  - ns.itunes.apple.com
+  - xp.apple.com
 
 domain_suffix_set:
-  - ads.internal.unity3d.com, reject
-  - ads.prd.ie.internal.unity3d.com, reject
-  - iadsdk.apple.com, reject
-  - unityads.unity3d.com, reject
+  - ads.internal.unity3d.com
+  - ads.prd.ie.internal.unity3d.com
+  - iadsdk.apple.com
+  - unityads.unity3d.com
