@@ -150,7 +150,7 @@ domain_set:
   - asimgs.pplive.cn
   - atrace.chelaile.net.cn
   - bootpreload.uve.weibo.com
-  - browsercfg-drcn.cloud.dbankcloud.cn
+  - browsercfg-drcn.cloud.dbankcloud.cn // 甚至想 DOMAIN-KEYWORD,drcn.cloud.dbankcloud.cn
   - business-cdn.shouji.sogou.com
   - c.bing.com
   - c.clarity.ms

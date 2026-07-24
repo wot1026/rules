@@ -1,2 +1,8 @@
 # 规则名称: Update
-# 规则统计: 0
+# 规则统计: 4
+
+domain_suffix_set:
+  - ads.internal.unity3d.com, reject
+  - ads.prd.ie.internal.unity3d.com, reject
+  - iadsdk.apple.com, reject
+  - unityads.unity3d.com, reject
