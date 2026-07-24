@@ -100,15 +100,28 @@ def quote_value(value: str) -> str:
 
 def parse_file(lines):
     """
-    解析原始 TYPE,VALUE 格式的行，返回:
+    解析原始规则行，返回:
       buckets: {分类key: [值, ...]}
       has_no_resolve: 是否任意一条 IP-CIDR/IP-CIDR6/IP-ASN 行带 no-resolve 标记
       skipped: [(行类型, 原始行内容), ...] 遇到已知不支持类型时记录，供调用方打印警告
     跳过空行和注释行(# 开头)。
+
+    兼容两种输入格式：
+      1) "TYPE,VALUE" 格式（Clash/Surge 常见写法，如 "DOMAIN-SUFFIX,example.com"）
+      2) 裸域名格式（AdGuard/AWAvenue 等规则源常见写法，一行一个域名，无类型前缀、
+         无逗号，如 ".example.com" 或 "example.com"）。这类行原先会被
+         line.split(",", 1) 判定长度不为2而被直接跳过，导致整份规则集被
+         静默清空且不产生任何报错或警告（已用真实数据复现：Ads_AWAvenue.list
+         906行全部是这种格式，旧逻辑下会输出"规则统计: 0"）。
+         处理方式：以 "." 开头的视为 domain_suffix（前导点表示匹配该域名及其
+         所有子域名，语义上等同 DOMAIN-SUFFIX，去掉前导点保留域名本身）；
+         不以 "." 开头、且本身像域名（不含空格、含至少一个点）的裸行视为
+         domain（等同精确 DOMAIN 匹配）。
     """
     buckets = {key: [] for key in TYPE_MAP.values()}
     has_no_resolve = False
     skipped = []
+    bare_domain_count = 0
 
     for raw_line in lines:
         line = raw_line.strip()
@@ -116,7 +129,19 @@ def parse_file(lines):
             continue
 
         parts = line.split(",", 1)
+
         if len(parts) != 2:
+            # 没有逗号：尝试按裸域名格式处理，而不是直接丢弃
+            if " " in line or "\t" in line:
+                # 含空白字符，不像单纯的域名行，无法安全识别，跳过
+                continue
+            if line.startswith("."):
+                buckets["domain_suffix_set"].append(line[1:])
+                bare_domain_count += 1
+            elif "." in line:
+                buckets["domain_set"].append(line)
+                bare_domain_count += 1
+            # 其余（既没逗号也不像域名的行）静默跳过，不计入统计
             continue
 
         rule_type = parts[0].strip()
@@ -143,7 +168,7 @@ def parse_file(lines):
 
         buckets[TYPE_MAP[rule_type]].append(value)
 
-    return buckets, has_no_resolve, skipped
+    return buckets, has_no_resolve, skipped, bare_domain_count
 
 
 def build_yaml(buckets: dict, has_no_resolve: bool, ruleset_name: str) -> str:
@@ -174,7 +199,7 @@ def convert_one(path: str):
     with open(path, "r", encoding="utf-8", errors="replace") as f:
         lines = f.readlines()
 
-    buckets, has_no_resolve, skipped = parse_file(lines)
+    buckets, has_no_resolve, skipped, bare_domain_count = parse_file(lines)
     ruleset_name = os.path.basename(path)[: -len(".yaml")] if path.endswith(".yaml") else os.path.basename(path)
 
     yaml_content = build_yaml(buckets, has_no_resolve, ruleset_name)
@@ -184,6 +209,10 @@ def convert_one(path: str):
 
     total = sum(len(v) for v in buckets.values())
     print(f"✅ {ruleset_name}: 共 {total} 条规则" + ("（含 no_resolve: true）" if has_no_resolve else ""))
+
+    if bare_domain_count:
+        print(f"  ℹ️ {ruleset_name}: 其中 {bare_domain_count} 条是裸域名格式(无类型前缀)，"
+              f"已按 domain/domain_suffix 自动识别")
 
     if skipped:
         print(f"  ⚠️ {ruleset_name}: 有 {len(skipped)} 行因类型暂不支持自动转换而跳过，需要人工核对：")
