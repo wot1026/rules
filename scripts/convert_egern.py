@@ -49,6 +49,7 @@ import glob
 
 TYPE_MAP = {
     "DOMAIN": "domain_set",
+    "HOST": "domain_set",  # 非标准写法(部分Surge规则源使用)，语义等同 DOMAIN
     "DOMAIN-SUFFIX": "domain_suffix_set",
     "HOST-SUFFIX": "domain_suffix_set",  # 非标准写法，语义等同 DOMAIN-SUFFIX
     "DOMAIN-KEYWORD": "domain_keyword_set",
@@ -117,11 +118,28 @@ def parse_file(lines):
          所有子域名，语义上等同 DOMAIN-SUFFIX，去掉前导点保留域名本身）；
          不以 "." 开头、且本身像域名（不含空格、含至少一个点）的裸行视为
          domain（等同精确 DOMAIN 匹配）。
+
+    类型名匹配大小写不敏感（已用真实数据复现：Update.list 里同一份文件混用了
+    "HOST-SUFFIX,xxx"（大写）和 "host, xxx"（全小写），原逻辑只精确匹配大写，
+    小写的 5 行被静默丢弃、不产生任何警告）。
+
+    自动剥离 "TYPE,VALUE,POLICY" 三段式里的 POLICY 尾巴（已用真实数据复现：
+    "HOST-SUFFIX,ads.internal.unity3d.com, reject" 这类行，原逻辑把
+    ", reject" 也当成域名值的一部分保留了下来，生成 "ads.internal.unity3d.com,
+    reject" 这种语法错误的域名，Egern 加载后该条规则会失效）。识别常见策略
+    关键字（reject/direct/proxy 及其别名），只在最后一段确实是已知策略词时
+    才剥离，避免误伤域名本身含逗号的正常场景（虽然域名不应含逗号，这里仍从
+    保守角度只匹配已知策略词做剥离，而不是无条件砍掉最后一段）。
     """
     buckets = {key: [] for key in TYPE_MAP.values()}
     has_no_resolve = False
     skipped = []
     bare_domain_count = 0
+
+    known_policy_words = {
+        "reject", "direct", "proxy", "pass", "no-resolve",
+        "reject-drop", "reject-tinygif", "reject-dict", "reject-array",
+    }
 
     for raw_line in lines:
         line = raw_line.strip()
@@ -144,13 +162,27 @@ def parse_file(lines):
             # 其余（既没逗号也不像域名的行）静默跳过，不计入统计
             continue
 
-        rule_type = parts[0].strip()
+        rule_type_raw = parts[0].strip()
+        rule_type = rule_type_raw.upper()  # 大小写不敏感匹配
         rest = parts[1].strip()
 
         if rule_type not in TYPE_MAP:
             if rule_type in KNOWN_UNSUPPORTED_TYPES:
-                skipped.append((rule_type, line))
+                skipped.append((rule_type_raw, line))
             continue
+
+        # 剥离末尾的 policy 段（如 "xxx.com, reject" -> "xxx.com"），
+        # 只在最后一段是已知策略词时才剥离，避免误伤
+        while "," in rest:
+            head, tail = rest.rsplit(",", 1)
+            tail_clean = tail.strip().lower()
+            if tail_clean == "no-resolve":
+                # no-resolve 单独处理（下面的分支会识别），这里先跳出循环
+                break
+            if tail_clean in known_policy_words:
+                rest = head.strip()
+                continue
+            break
 
         # 判断这一行是否带 no-resolve 后缀（只对 IP 类规则有意义）
         if rule_type in ("IP-CIDR", "IP-CIDR6", "IP-ASN") and rest.endswith(",no-resolve"):
