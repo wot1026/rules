@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4648
+# 规则统计: 4649
 
 domain_set:
   - 7h1s_rul35et_i5_mad3_by_5ukk4w-ruleset.skk.moe
@@ -1166,6 +1166,7 @@ domain_set:
   - code.upscope.io
   - comm.res.easebar.com
   - common-header.nimg.jp
+  - community-cdn.openstreetmap.org
   - components.clever-cloud.com
   - components.cyclingfactory.be
   - components.justanswer.com
