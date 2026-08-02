@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4652
+# 规则统计: 4654
 
 domain_set:
   - 7h15_ru1353t_1s_m4d3_by_5ukk4w.skk.moe
@@ -1180,6 +1180,7 @@ domain_set:
   - connect.facebook.net
   - connect.getflowbox.com
   - connect.nosto.com
+  - connectcache20.azureedge.net
   - connectivitycheck.android.com
   - connectivitycheck.gstatic.com
   - consent-manager.ft.com
@@ -2040,6 +2041,7 @@ domain_set:
   - map.vesselfinder.net
   - maps.geoapify.com
   - maps.gstatic.com
+  - maps.hereapi.com
   - maps.wikimedia.org
   - maps.wplace.live
   - mapserver.mapy.cz
