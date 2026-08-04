@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4654
+# 规则统计: 4656
 
 domain_set:
   - 7h15_ru1353t_1s_m4d3_by_5ukk4w.skk.moe
@@ -298,6 +298,7 @@ domain_set:
   - assets.time.com
   - assets.tokopedia.net
   - assets.toot.cafe
+  - assets.trainingpeaks.com
   - assets.transfernow.net
   - assets.tvtropes.org
   - assets.twitch.tv
@@ -3304,6 +3305,7 @@ domain_set:
   - webappassets.smartsheet.com
   - webassets.linear.app
   - webcdn.17app.co
+  - webdist.data.apnic.net
   - webfonts.zoho.com
   - webobjects2.cdw.com
   - webp.frostming.com
