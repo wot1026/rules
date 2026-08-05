@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4656
+# 规则统计: 4657
 
 domain_set:
   - 7h15_ru1353t_1s_m4d3_by_5ukk4w.skk.moe
@@ -304,6 +304,7 @@ domain_set:
   - assets.twitch.tv
   - assets.unicorn.studio
   - assets.unifi-ai.com
+  - assets.unredacted.org
   - assets.upload.io
   - assets.vantage.sh
   - assets.vercel.com
