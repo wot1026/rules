@@ -1,8 +1,8 @@
 # 规则名称: CDN
-# 规则统计: 4657
+# 规则统计: 4662
 
 domain_set:
-  - 7h15_ru1353t_1s_m4d3_by_5ukk4w.skk.moe
+  - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
   - cdn-msp.18comic.org
   - cdn-msp.18comic.vip
   - cdn-msp.jmcomic-zzz.one
@@ -10,8 +10,9 @@ domain_set:
   - 0x0.st
   - 3dna.nationbuilder.com
   - 4gtvimg2.4gtv.tv
-  - 7h15_ru1353t_1s_m4d3_by_5ukk4w.skk.moe
+  - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
   - a-cdn.anthropic.com
+  - a-tiles.locationiq.com
   - a.deviantart.net
   - a.fireside.fm
   - a.gawby.com
@@ -363,6 +364,7 @@ domain_set:
   - awsimgsrc.dmm.co.jp
   - axiecdn.axieinfinity.com
   - az700632.vo.msecnd.net
+  - b-tiles.locationiq.com
   - b.manufact.com
   - b.peatio.com
   - b.sf-syn.com
@@ -379,6 +381,7 @@ domain_set:
   - banners.chessbase.com
   - barracuda-assets.zoovu.com
   - barracuda-cdn.zoovu.com
+  - basemap.beacondb.net
   - bcdn.alotporn.com
   - bcdn.starapps.studio
   - bcmedia.bitchute.com
@@ -417,6 +420,7 @@ domain_set:
   - busuanzi.ibruce.info
   - bytescale.mobbin.com
   - c-bin.b-cdn.net
+  - c-tiles.locationiq.com
   - c.1password.com
   - c.animaapp.com
   - c.fantia.jp
@@ -3124,6 +3128,7 @@ domain_set:
   - tiles.arcticconnect.ca
   - tiles.gsj.jp
   - tiles.immich.cloud
+  - tiles.locationiq.com
   - tiles.mapilion.com
   - tiles.mapillary.com
   - tiles.maps.eox.at
