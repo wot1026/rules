@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4668
+# 规则统计: 4692
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -94,6 +94,7 @@ domain_set:
   - app.moegirl.tw
   - app.quotemedia.com
   - app.roboflow.com
+  - app.shop.pe
   - app.viral-loops.com
   - appassets.mvtdev.com
   - apps-static.route4me.com
@@ -172,6 +173,7 @@ domain_set:
   - assets.context.ly
   - assets.controld.com
   - assets.convertkit.com
+  - assets.create.roblox.com
   - assets.customer.io
   - assets.cyberghostvpn.com
   - assets.dev.to
@@ -196,6 +198,7 @@ domain_set:
   - assets.freespeechcoalition.com
   - assets.frontegg.com
   - assets.fxnetworks.com
+  - assets.game8.co
   - assets.garr.it
   - assets.gcore.pro
   - assets.geeksforgeeks.org
@@ -291,6 +294,7 @@ domain_set:
   - assets.stickpng.com
   - assets.stigg.io
   - assets.streamlinehq.com
+  - assets.swiftkey.com
   - assets.swoogo.com
   - assets.tangled.network
   - assets.tatlerasia.com
@@ -328,17 +332,23 @@ domain_set:
   - assets.zpic.biz
   - assets0.headwayapp.co
   - assets1.lottiefiles.com
+  - assets10.freshdesk.com
   - assets10.lottiefiles.com
   - assets2.blubrry.com
   - assets2.canny.io
+  - assets2.freshdesk.com
   - assets2.lottiefiles.com
+  - assets3.freshdesk.com
   - assets3.lottiefiles.com
   - assets4.lottiefiles.com
   - assets4.mist-train-girls.com
+  - assets5.freshdesk.com
   - assets5.lottiefiles.com
   - assets6.lottiefiles.com
+  - assets7.freshdesk.com
   - assets7.lottiefiles.com
   - assets8.lottiefiles.com
+  - assets9.freshdesk.com
   - assets9.lottiefiles.com
   - assetscdn-wchat.eu.freshchat.com
   - assetscdn.jable.tv
@@ -1195,6 +1205,7 @@ domain_set:
   - consent-manager.ft.com
   - consent-notice.ft.com
   - consent.dw.com
+  - consent.fmm.io
   - consent.formula1.com
   - consentdeliveryfd.azurefd.net
   - consumersite-assets.trustpilot.net
@@ -1234,6 +1245,7 @@ domain_set:
   - crl.usertrust.com
   - crl.verisign.com
   - crl3.digicert.com
+  - crossborder-integration.global-e.com
   - crt.comodoca.com
   - crt.sectigo.com
   - crt.usertrust.com
@@ -1483,6 +1495,7 @@ domain_set:
   - g.newsweek.com
   - g1.nyt.com
   - gamemedia.armorgames.com
+  - gamesapps-assets.ghub.logitechg.com
   - gannett-cdn.ex.co
   - gdb.rferl.org
   - gdb.voanews.com
@@ -1559,6 +1572,7 @@ domain_set:
   - i.jpg.dog
   - i.kickstarter.com
   - i.loli.best
+  - i.macsecurity.net
   - i.magecdn.com
   - i.mediatek.com
   - i.meee.com.tw
@@ -1570,6 +1584,7 @@ domain_set:
   - i.pcmag.com
   - i.rtings.com
   - i.servimg.com
+  - i.skiplagged.com
   - i.snap.as
   - i.typlog.com
   - i.vgy.me
@@ -1691,6 +1706,7 @@ domain_set:
   - images.flightradar24.com
   - images.g2crowd.com
   - images.github.media
+  - images.gog.com
   - images.hothardware.com
   - images.icon-icons.com
   - images.indianexpress.com
@@ -2362,6 +2378,7 @@ domain_set:
   - prod-streaming-video-msn-com.akamaized.net
   - prod-video-cms-amp-microsoft-com.akamaized.net
   - prod.addictinggames.com
+  - prod.docsiteassets.roblox.com
   - prodamdnewsencoding.akamaized.net
   - production-cmp.isgprivacy.cbsi.com
   - profile-images.xing.com
@@ -2885,6 +2902,7 @@ domain_set:
   - static.monotype.com
   - static.moomoo.com
   - static.moonpay.com
+  - static.mul-pay.jp
   - static.music.com
   - static.mypikpak.com
   - static.mysph.sph.com.sg
@@ -2902,6 +2920,7 @@ domain_set:
   - static.nyse.com
   - static.observablehq.com
   - static.oklink.com
+  - static.okx.cab
   - static.okx.com
   - static.olelive.com
   - static.onlinewebfonts.com
@@ -3417,6 +3436,7 @@ domain_suffix_set:
   - adguardcdn.com
   - adobeccstatic.com
   - adtidy.org
+  - aexp-static.com
   - agechecker-northern-apps.com
   - agechecker.northern-apps.com
   - ahcdn.com
@@ -3474,6 +3494,7 @@ domain_suffix_set:
   - awsstatic.com
   - awxcdn.com
   - ax1x.com
+  - axis-cdn.net
   - azurestaticapps.net
   - b2c-contenthub.com
   - badgen.net
@@ -3674,6 +3695,7 @@ domain_suffix_set:
   - disquscdn.com
   - divio-media.net
   - dlunar.net
+  - dm-static.com
   - dmcdn.net
   - dnvodcdn.me
   - docker.io
@@ -3819,6 +3841,7 @@ domain_suffix_set:
   - glass.adidas.com
   - glbimg.com
   - global-cdn.me
+  - gog-statics.com
   - gold-usergeneratedcontent.net
   - googleadservices.com
   - googleusercontent.com
@@ -4221,6 +4244,7 @@ domain_suffix_set:
   - pressidiumcdn.com
   - prhcdn.com
   - privacy-gateway.cloudflare.com
+  - privacyguidesusercontent.com
   - prod-east.frontend.public.atl-paas.net
   - prod.public.atl-paas.net
   - project1content.com
