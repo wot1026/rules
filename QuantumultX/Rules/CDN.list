@@ -1,11 +1,12 @@
 # 规则名称: CDN
-# 规则统计: 85
+# 规则统计: 87
 
 HOST,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe,CDN
 HOST,cdn-msp.18comic.org,CDN
 HOST,cdn-msp.18comic.vip,CDN
 HOST,cdn-msp.jmcomic-zzz.one,CDN
 HOST,cdn-msp.jmcomic.me,CDN
+HOST-KEYWORD,-assets.dmm.co.jp,CDN
 HOST-KEYWORD,-assets.worldsex.com,CDN
 HOST-KEYWORD,-cdn.eporner.com,CDN
 HOST-KEYWORD,-files.gitbook.io,CDN
@@ -47,6 +48,7 @@ HOST-WILDCARD,cdn-msp?.18comic.org,CDN
 HOST-WILDCARD,cdn-msp?.18comic.vip,CDN
 HOST-WILDCARD,cdn-msp?.jmcomic-zzz.one,CDN
 HOST-WILDCARD,cdn-msp?.jmcomic.me,CDN
+HOST-WILDCARD,cdn.*.dmm.co.jp,CDN
 HOST-WILDCARD,cdn.*.microsoft.com,CDN
 HOST-WILDCARD,cdn.*.office.net,CDN
 HOST-WILDCARD,cdn?-dl.pornhost.com,CDN

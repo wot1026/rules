@@ -62,7 +62,6 @@ HOST,httpdnsvip.meituan.com,Ads_SukkaW
 HOST,httpsdns.baidu.com,Ads_SukkaW
 HOST,js.iterable.com,Ads_SukkaW
 HOST,log.mmstat.com,Ads_SukkaW
-HOST,ntp.api.bz,Ads_SukkaW
 HOST,resolver.mi.xiaomi.com,Ads_SukkaW
 HOST,resolver.msg.xiaomi.net,Ads_SukkaW
 HOST,serveraddr.service.kugou.com,Ads_SukkaW
@@ -77,6 +76,7 @@ HOST-SUFFIX,adincube.com,Ads_SukkaW
 HOST-SUFFIX,adtech.redventures.io,Ads_SukkaW
 HOST-SUFFIX,advertising.com,Ads_SukkaW
 HOST-SUFFIX,amplitude.com,Ads_SukkaW
+HOST-SUFFIX,api.bz,Ads_SukkaW
 HOST-SUFFIX,august.tw,Ads_SukkaW
 HOST-SUFFIX,bgp.co,Ads_SukkaW
 HOST-SUFFIX,binaryoptionz.com,Ads_SukkaW
