@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4713
+# 规则统计: 4714
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -4103,6 +4103,7 @@ domain_suffix_set:
   - macysassets.com
   - makeuseofimages.com
   - mangadex.network
+  - manuscdn.com
   - mapi.4kvm.net
   - marketing.aws.dev
   - mcusercontent.com
