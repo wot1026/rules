@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4717
+# 规则统计: 4724
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -1280,6 +1280,7 @@ domain_set:
   - dc-cdn.cdw.com
   - dd.blackhawknetwork.com
   - dd.dexscreener.com
+  - delivery.twentythree.com
   - demo.unified-streaming.com
   - demotiles.maplibre.org
   - denali-static.grammarly.com
@@ -1434,6 +1435,7 @@ domain_set:
   - file.zoom.us
   - file1.hkepc.net
   - files.armorgames.com
+  - files.blocktempo.ai
   - files.buildwithfern.com
   - files.gempages.net
   - files.iwara.tv
@@ -1636,6 +1638,7 @@ domain_set:
   - image-us.samsung.com
   - image.acg.lol
   - image.ap-mail.org
+  - image.blocktempo.com
   - image.civitai.com
   - image.cnbcfm.com
   - image.comicbz.com
@@ -3033,6 +3036,7 @@ domain_set:
   - static1.squarespace.com
   - static10.lottiefiles.com
   - static2.avg.com
+  - static2.giroditalia.it
   - static2.lottiefiles.com
   - static2.onlyfans.com
   - static2.sharepointonline.com
@@ -3294,6 +3298,7 @@ domain_set:
   - video.bsky.app
   - video.cdnbye.com
   - video.dailymail.co.uk
+  - video.giroditalia.it
   - video1.7mmtv.sx
   - video2.7mmtv.sx
   - video3.mingpao.com
@@ -3838,6 +3843,7 @@ domain_suffix_set:
   - gateway.serph.network
   - gauthstatic.com
   - gayzyimage.com
+  - gazzettaobjects.it
   - gcr.si
   - gdvid.info
   - gentcdn.com
@@ -4305,6 +4311,7 @@ domain_suffix_set:
   - raxcdn.com
   - raygun.io
   - rbxcdn.com
+  - rcsobjects.it
   - rdtcdn.com
   - react.dev
   - reactjs.org
