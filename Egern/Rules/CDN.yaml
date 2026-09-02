@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4731
+# 规则统计: 4735
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -818,7 +818,6 @@ domain_set:
   - cdn.networklessons.com
   - cdn.neverbounce.com
   - cdn.nfcube.com
-  - cdn.nodeimage.com
   - cdn.nolt.io
   - cdn.northropgrumman.com
   - cdn.now.gg
@@ -939,6 +938,7 @@ domain_set:
   - cdn.svgator.com
   - cdn.svgporn.com
   - cdn.syftdata.com
+  - cdn.system1.com
   - cdn.tailwindcss.com
   - cdn.tatlerasia.com
   - cdn.techcommunity.microsoft.com
@@ -2027,6 +2027,7 @@ domain_set:
   - launcher-files.modrinth.com
   - launcher.spot.im
   - launchercontent.mojang.com
+  - layers.mapq.st
   - lc.nssurge.com
   - learn-attachment.microsoft.com
   - learn.optimizely.com
@@ -3293,6 +3294,7 @@ domain_set:
   - variations.brave.com
   - vbmspic.video.friday.tw
   - vcdn.anysex.com
+  - vector.hereapi.com
   - vectorified.com
   - versionbadg.es
   - vetted.ai
@@ -4154,6 +4156,7 @@ domain_suffix_set:
   - mobilius.top
   - monitor.azure.com
   - motherlessmedia.com
+  - mqcdn.com
   - msftauthimages.net
   - msftconnecttest.com
   - msftncsi.com
@@ -4191,6 +4194,7 @@ domain_suffix_set:
   - ninjastream.to
   - nitrocdn.com
   - nodecdn.net
+  - nodeimage.com
   - nodejs.org
   - nordcdn.com
   - notify.bugsnag.com
