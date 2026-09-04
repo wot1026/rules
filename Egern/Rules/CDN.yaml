@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4735
+# 规则统计: 4736
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -745,6 +745,7 @@ domain_set:
   - cdn.imageengine.io
   - cdn.imago-images.com
   - cdn.img.ly
+  - cdn.imgchest.com
   - cdn.infoq.com
   - cdn.insightmediagroup.io
   - cdn.inviter.co
