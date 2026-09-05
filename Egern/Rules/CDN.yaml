@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4736
+# 规则统计: 4738
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -289,7 +289,6 @@ domain_set:
   - assets.squarewebsites.org
   - assets.st-note.com
   - assets.stash.com
-  - assets.static-upwork.com
   - assets.stickpng.com
   - assets.stigg.io
   - assets.streamlinehq.com
@@ -2884,6 +2883,7 @@ domain_set:
   - static.hotjar.com
   - static.hubspot.com
   - static.hugedomains.com
+  - static.idp.sph.com.sg
   - static.ietf.org
   - static.ifunny.co
   - static.incapsula.com
@@ -4244,6 +4244,7 @@ domain_suffix_set:
   - pcdn.co
   - permaweb.eu.org
   - permaweb.io
+  - pgimgs.com
   - pgl.yoyo.org
   - phncdn.com
   - photobucket.com
@@ -4425,6 +4426,7 @@ domain_suffix_set:
   - stapecdn.com
   - static-assets.photoshop.adobe.com
   - static-prod-web.miniclip.com
+  - static-upwork.com
   - static.amplience.net
   - static.chaosgroup.com
   - static.dash.cloudflare.com
