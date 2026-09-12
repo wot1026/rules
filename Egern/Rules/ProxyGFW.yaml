@@ -1,5 +1,5 @@
 # 规则名称: ProxyGFW
-# 规则统计: 7503
+# 规则统计: 7487
 
 no_resolve: true
 
@@ -401,12 +401,9 @@ domain_suffix_set:
   - apartments.com
   - apat1989.org
   - apetube.com
-  - api-gl.lbkrs.com
   - api-secure.recaptcha.net
   - api-verify.recaptcha.net
   - api.ai
-  - api.futunn.com
-  - api.lbkrs.com
   - api.moomoobull.com
   - api.palworldgame.com
   - api.proxlet.com
@@ -414,7 +411,6 @@ domain_suffix_set:
   - api.recaptcha.net
   - api.shuaiapi.com
   - api.steampowered.com
-  - api5.futunn.com
   - apiary.io
   - apigee.com
   - apk-dl.com
@@ -1076,7 +1072,6 @@ domain_suffix_set:
   - cdn-images.mailchimp.com
   - cdn-telegram.org
   - cdn.arstechnica.net
-  - cdn.futustatic.com
   - cdn.jwplayer.com
   - cdn.printfriendly.com
   - cdn.registerdisney.go.com
@@ -1321,7 +1316,6 @@ domain_suffix_set:
   - cn.sandscotaicentral.com
   - cn.shafaqna.com
   - cn.theaustralian.com.au
-  - cn.uptodown.com
   - cn6.eu
   - cna.com.tw
   - cnabc.com
@@ -1700,7 +1694,6 @@ domain_suffix_set:
   - dowjones.com
   - dowjones.io
   - download.dappcdn.com
-  - download.futunn.com
   - dphk.org
   - dpool.top
   - dpp.org.tw
@@ -3918,7 +3911,6 @@ domain_suffix_set:
   - lzjscript.com
   - lzmtnews.org
   - m-sport.co.uk
-  - m.hkgalden.com
   - m.me
   - m.moegirl.org
   - m.plixi.com
@@ -4664,12 +4656,8 @@ domain_suffix_set:
   - openai.com
   - openallweb.com
   - openapi-quote.longbridge.cn
-  - openapi-quote.longbridge.com
   - openapi-trade.longbridge.cn
-  - openapi-trade.longbridge.com
-  - openapi.futunn.com
   - openapi.longbridge.cn
-  - openapi.longbridge.com
   - openart.ai
   - openbase.com
   - opencritic.com
@@ -5103,10 +5091,9 @@ domain_suffix_set:
   - qpoe.com
   - qq.co.za
   - qstatus.com
-  - qtcard.futunn.com
-  - qtcardfthk.futufin.com
   - qtrac.eu
   - qtweeter.com
+  - quakemachinex.com
   - quannengshen.org
   - quantumbooter.net
   - quay.io
@@ -5832,7 +5819,6 @@ domain_suffix_set:
   - superzooi.com
   - supjav.com
   - suppig.net
-  - support.futunn.com
   - supremecourt.gov
   - suprememastertv.com
   - surfeasy.com
@@ -6269,8 +6255,6 @@ domain_suffix_set:
   - tparents.org
   - tpi.org.tw
   - tracfone.com
-  - trade.futunn.com
-  - trade.longportapp.com
   - tradeup.com
   - tradingview.com
   - traffichaus.com
