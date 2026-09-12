@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4738
+# 规则统计: 4739
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -2484,6 +2484,7 @@ domain_set:
   - resources.chessbase.com
   - resources.digital-cloud.medallia.com
   - resources.help.salesforce.com
+  - resources.redbull.tv
   - resources.whatwg.org
   - rest.happierleads.com
   - reviews-badge.capterra.com
