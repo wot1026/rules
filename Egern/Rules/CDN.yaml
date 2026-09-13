@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4739
+# 规则统计: 4740
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -3148,6 +3148,7 @@ domain_set:
   - th.bing.com
   - themes.fourthwall.com
   - themes.hibootstrap.com
+  - thumb.wikimedia.org
   - thumbnail.missav.com
   - thumbnailer.mixcloud.com
   - thumbnails.applegamingwiki.com
