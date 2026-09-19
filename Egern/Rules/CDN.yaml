@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4749
+# 规则统计: 4750
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -1982,6 +1982,7 @@ domain_set:
   - js-1-cdn.airdroid.com
   - js-eu1.hsforms.net
   - js-s3.quickcep.com
+  - js.arcgis.com
   - js.assemblyexchange.com
   - js.braintreegateway.com
   - js.chargebee.com
