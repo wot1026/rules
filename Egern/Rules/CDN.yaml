@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4758
+# 规则统计: 4759
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -152,6 +152,7 @@ domain_set:
   - assets.brevo.com
   - assets.buttondown.email
   - assets.bwbx.io
+  - assets.byokey.io
   - assets.byteplus.com
   - assets.calendly.com
   - assets.canny.io
