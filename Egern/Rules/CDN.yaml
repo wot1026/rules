@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4761
+# 规则统计: 4763
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -1847,6 +1847,7 @@ domain_set:
   - img.fzf404.art
   - img.gs
   - img.hellofresh.com
+  - img.helpnetsecurity.com
   - img.hentaihaven.xxx
   - img.highporn.net
   - img.huffingtonpost.com
@@ -1916,6 +1917,7 @@ domain_set:
   - img1.yeggi.com
   - img1.yna.co.kr
   - img2.gelbooru.com
+  - img2.helpnetsecurity.com
   - img2.javmost.com
   - img2.socialshopwave.com
   - img2.tnaflix.com

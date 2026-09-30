@@ -1,5 +1,5 @@
 # 规则名称: Ads_limbopro
-# 规则统计: 522
+# 规则统计: 527
 
 HOST,118.89.204.198,reject
 HOST,25e87c0802f91cf8cgg.6uzxtlv.cn,reject
@@ -268,6 +268,7 @@ HOST-SUFFIX,adserver.yahoo.com,reject
 HOST-SUFFIX,adspecs.yahoo.com,reject
 HOST-SUFFIX,advertising.yahoo.com,reject
 HOST-SUFFIX,adxadserv.com,reject
+HOST-SUFFIX,akhaldqp.in,reject
 HOST-SUFFIX,alexametrics.com,reject
 HOST-SUFFIX,alitui.weibo.com,reject
 HOST-SUFFIX,amung.us,reject
@@ -331,6 +332,7 @@ HOST-SUFFIX,fanza.cc,reject
 HOST-SUFFIX,farmcrapsubsist.com,reject
 HOST-SUFFIX,farwine.com,reject
 HOST-SUFFIX,fmiqcupku.com,reject
+HOST-SUFFIX,frozenpayerpregnant.com,reject
 HOST-SUFFIX,gdt.qq.com,reject
 HOST-SUFFIX,gemini.yahoo.com,reject
 HOST-SUFFIX,ggsfq.com,reject
@@ -351,6 +353,8 @@ HOST-SUFFIX,hbhuatie.com,reject
 HOST-SUFFIX,histats.com,reject
 HOST-SUFFIX,hoisin.coocaa.com,reject
 HOST-SUFFIX,hoisin.coocaatv.com,reject
+HOST-SUFFIX,horribletrainer.com,reject
+HOST-SUFFIX,i.5432kk.com,reject
 HOST-SUFFIX,iad-01.braze.com,reject
 HOST-SUFFIX,iad-02.braze.com,reject
 HOST-SUFFIX,iad-03.appboy.com,reject
@@ -389,6 +393,7 @@ HOST-SUFFIX,juicyads.in,reject
 HOST-SUFFIX,kk.braincf.com,reject
 HOST-SUFFIX,kkjhgfds.top,reject
 HOST-SUFFIX,knlk2md.cn,reject
+HOST-SUFFIX,kugqwiarq.in,reject
 HOST-SUFFIX,l.qq.com,reject
 HOST-SUFFIX,links.services.disqus.com,reject
 HOST-SUFFIX,log.hunantv.com,reject
