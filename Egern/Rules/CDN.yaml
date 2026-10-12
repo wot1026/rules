@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4770
+# 规则统计: 4771
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -3210,6 +3210,7 @@ domain_set:
   - tiles.maps.opensearch.org
   - tiles.mapterhorn.com
   - tiles.meteoguard.dtn.com
+  - tiles.onemap.gov.sg
   - tiles.openfreemap.org
   - tiles.openrailwaymap.org
   - tiles.openseamap.org
