@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4774
+# 规则统计: 4775
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -1734,6 +1734,7 @@ domain_set:
   - images.github.media
   - images.gog.com
   - images.hibob.com
+  - images.higgs.ai
   - images.hothardware.com
   - images.icon-icons.com
   - images.indianexpress.com
