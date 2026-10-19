@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4777
+# 规则统计: 4780
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -1511,6 +1511,7 @@ domain_set:
   - frontend-assets.supabase.com
   - frontend-cdn.perplexity.ai
   - frontend.floatplane.com
+  - frontend2.locally.com
   - fs.mingpao.com
   - fscdn.eppo.cloud
   - fullstackopen.com
@@ -2202,6 +2203,7 @@ domain_set:
   - media.theporndude.com
   - media.theresanaiforthat.com
   - media.trakt.tv
+  - media.trekbikes.com
   - media.user.com
   - media.wd40.asia
   - media.webtoo.ls
@@ -3331,6 +3333,7 @@ domain_set:
   - vanilla-extract.style
   - variations.brave.com
   - vbmspic.video.friday.tw
+  - vcc-assets.8x8.com
   - vcdn.anysex.com
   - vector.hereapi.com
   - vectorified.com
