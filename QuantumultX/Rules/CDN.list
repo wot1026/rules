@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 85
+# 规则统计: 86
 
 HOST,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe,CDN
 HOST,cdn-msp.18comic.org,CDN
@@ -53,6 +53,7 @@ HOST-WILDCARD,cdn?-dl.pornhost.com,CDN
 HOST-WILDCARD,cdn?.18girlssex.com,CDN
 HOST-WILDCARD,cdn?.mikuclub.fun,CDN
 HOST-WILDCARD,cdns.*.gigya.com,CDN
+HOST-WILDCARD,cf-images.*.prod.boltdns.net,CDN
 HOST-WILDCARD,chunk-*.mux.com,CDN
 HOST-WILDCARD,fastly-*.allmovie.com,CDN
 HOST-WILDCARD,file?.mikuclub.fun,CDN
