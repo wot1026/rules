@@ -1,5 +1,5 @@
 # 规则名称: ProxyGFW
-# 规则统计: 7542
+# 规则统计: 7547
 
 no_resolve: true
 
@@ -378,6 +378,7 @@ domain_suffix_set:
   - answering-islam.org
   - antd.org
   - anthonycalzadilla.com
+  - anthropic.auth0.com
   - anthropic.com
   - anti1984.com
   - antichristendom.com
@@ -916,6 +917,7 @@ domain_suffix_set:
   - brucewang.net
   - brutaltgp.com
   - bsky.app
+  - bsky.chat
   - bsky.network
   - bsky.social
   - bt2mag.com
@@ -1283,7 +1285,10 @@ domain_suffix_set:
   - clashyun.com
   - classicalguitarblog.net
   - claude.ai
+  - claude.app
   - claude.com
+  - claudemcpcontent.com
+  - claudeusercontent.com
   - clb.org.hk
   - cldr.unicode.org
   - cleansite.biz
