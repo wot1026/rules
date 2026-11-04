@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4784
+# 规则统计: 4785
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -302,6 +302,7 @@ domain_set:
   - assets.swoogo.com
   - assets.tangled.network
   - assets.tatlerasia.com
+  - assets.temporary-phone-number.com
   - assets.the-independent.com
   - assets.tigerdata.com
   - assets.time.com
