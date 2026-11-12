@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4785
+# 规则统计: 4786
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -1989,6 +1989,7 @@ domain_set:
   - interwiki.scpwiki.com
   - interwiki.scpwikicn.com
   - ip-ranges.amazonaws.com
+  - iprsoftwaremedia.com
   - ipxy.io
   - irp-cdn.multiscreensite.com
   - isitmaintained.com
