@@ -1,5 +1,5 @@
 # 规则名称: Ads_limbopro
-# 规则统计: 527
+# 规则统计: 530
 
 no_resolve: true
 
@@ -251,6 +251,8 @@ domain_suffix_set:
   - 9e77b6e6e2.2e3f31faae.com
   - a.adforcast.com
   - a.bestcontentfood.top
+  - a.magsrv.com
+  - a.pemsrv.com
   - a.realsrv.com
   - a.shukriya90.com
   - ad-nex.com
@@ -385,6 +387,7 @@ domain_suffix_set:
   - jads.co
   - jianxinshanghai.com
   - jidukeji.com
+  - jitrivppyz.in
   - jknmthwd.xyz
   - js.51toubu.com
   - js.capndr.com
