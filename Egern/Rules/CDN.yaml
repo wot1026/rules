@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4786
+# 规则统计: 4787
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -2456,6 +2456,7 @@ domain_set:
   - public.komiic.com
   - public.linear.app
   - public.mocortech.com
+  - public.popclip.app
   - public.saasexch.com
   - public.zoorix.com
   - publicsuffix.org
