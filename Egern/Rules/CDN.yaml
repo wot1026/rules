@@ -1,5 +1,5 @@
 # 规则名称: CDN
-# 规则统计: 4787
+# 规则统计: 4789
 
 domain_set:
   - 7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -2145,6 +2145,7 @@ domain_set:
   - media.crazyshit.com
   - media.currys.biz
   - media.daily.dev
+  - media.datacamp.com
   - media.datacenterdynamics.com
   - media.dev.to
   - media.discordapp.net
@@ -2946,6 +2947,7 @@ domain_set:
   - static.jsbin.com
   - static.jup.ag
   - static.k2s.cc
+  - static.karousell.com
   - static.killedbygoogle.com
   - static.klaviyo.com
   - static.kobo.com
